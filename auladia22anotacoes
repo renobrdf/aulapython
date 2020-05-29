@@ -1,0 +1,115 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create the vectors X and Y
+x = np.array(range(10))
+y = -x ** 2 + 2*x + 1
+x1 = np.linspace(-4, 4)
+# Create the plot
+plt.plot(x,y,)
+
+# Show the plot
+plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+x=np.linspace(-10,10,100)   # Estou a criar dados de input em X.
+y=np.zeros((100,1))         # Estou a criar um vector de saida em Y.
+
+i=0
+while i < 100:
+    y[i]=-x[i]**2+2*x[i]+1     # Estou a atribuir a cada célula de Y
+    i=i+1                   # o correspondente valor de X após passar por f(x)
+
+# marker é o simbolo do marcador e color a cor do marcador.
+plt.plot(x,y)   # estou a fazer o gráfico dos dois vectores.
+  # Aqui estou a tentar criar linhas
+# para os eixos X e Y.
+
+plt.ylim(-5,6)  # Aqui estou a limitar a janela dos gráficos em Y.
+plt.xlim(-5,6)  # ... e em X.
+
+plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+a=0
+b=1
+e=0.001
+stop=1
+def f(x):
+  return x^4-26*x^2+24*x+21
+if f(a)*f(b)<0:
+  while (math.fabs(b-a)/2>e):
+    xi=(a+b)/2
+if f(xi) == 0:
+        print("A raíz é", xi)
+        break
+else:
+  if f(a)*f(xi) <0 :
+        b=xi
+  else:
+        a=xi
+print("A RAÍZ é", xi)  
+x1=np.linspace(1,2)
+plt.plot(x1,f(x1))
+plt.title('Método por Bisseção')
+plt.xlabel('EIXO X')
+plt.ylabel('EIXO Y')
+plt.grid()
+plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+a=1
+b=2
+e=0.001
+stop=1
+def f(x):
+  return x**4-26*x**2+24*x+21
+if f(a)*f(b)<0:
+  while (math.fabs(b-a)/2>e):
+    xi=(a+b)/2
+    if f(xi) == 0:
+      print("A raíz é", xi)
+      break
+    else:
+      if f(a)*f(xi) <0 :
+        b=xi
+      else:
+        a=xi
+print("A RAÍZ é","%.5f" % xi)  
+x1=np.linspace(0,1)
+plt.plot(x1,f(x1))
+plt.title('Método por Bisseção')
+plt.xlabel('EIXO X')
+plt.ylabel('EIXO Y')
+plt.grid()
+plt.show()
+
+
+
+def bissecao(f, a, b, TOL, N):  
+    i = 1  
+    fa = f(a)  
+    while (i <= N):  
+        #iteracao da bissecao  
+        p = a + (b-a)/2  
+        fp = f(p)  
+        #condicao de parada  
+        if ((fp == 0) or ((b-a)/2 < TOL)):  
+            return p  
+        #bissecta o intervalo  
+        i = i+1  
+        if (fa * fp > 0):  
+            a = p  
+            fa = fp  
+        else:  
+            b = p  
+            print(p)
