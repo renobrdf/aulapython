@@ -1,0 +1,9 @@
+
+print("Coloque um numero como base")
+a = float(input())
+print("Coloque um número como expoente")
+b = float(input())
+x = a**b
+if b==0:
+	a = 1
+print(x)
